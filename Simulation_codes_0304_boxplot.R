@@ -74,6 +74,7 @@ SIMU <- function(N){
   return(sta)
 }
 
+# Define number of simulations and the range of sample size
 n_simulations <- 100
 x_values <- seq(20, 200, by = 10)
 
@@ -88,11 +89,12 @@ for (i in 1:n_simulations) {
   }
 }
 
+# Include outliers
 par(mfrow=c(1,2))
 boxplot(a_matrix, names=seq(20, 200, by = 10))
 boxplot(b_matrix, names=seq(20, 200, by = 10))
 
-
+# Exclude outliers
 par(mfrow=c(1,2))
 boxplot(a_matrix, names=seq(20, 200, by = 10), outline=FALSE)
 boxplot(b_matrix, names=seq(20, 200, by = 10), outline=FALSE)
